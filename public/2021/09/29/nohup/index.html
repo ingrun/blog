@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="LINUX 将进程放入后台执行，SSH 断开导致进程结束（NOHUP, SETSID, &amp;, DISOWN）Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown） 1、nohup 命令 我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法">
+  <meta name="description" content="（NOHUP, SETSID, &amp;, DISOWN）Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown） 1、nohup 命令 我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法就有两种途径：要么让进程忽略 HUP 信号，要么让进程运">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ingrun">
+<meta property="og:title" content="LINUX 将进程放入后台执行，SSH 断开导致进程结束">
 <meta property="og:url" content="http://example.com/2021/09/29/nohup/index.html">
 <meta property="og:site_name" content="ingrun">
-<meta property="og:description" content="LINUX 将进程放入后台执行，SSH 断开导致进程结束（NOHUP, SETSID, &amp;, DISOWN）Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown） 1、nohup 命令 我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法">
+<meta property="og:description" content="（NOHUP, SETSID, &amp;, DISOWN）Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown） 1、nohup 命令 我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法就有两种途径：要么让进程忽略 HUP 信号，要么让进程运">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T03:40:46.413Z">
-<meta property="article:modified_time" content="2021-10-19T01:55:47.984Z">
+<meta property="article:modified_time" content="2021-10-19T02:00:20.616Z">
 <meta property="article:author" content="ingrun">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title> | ingrun</title>
+  <title>LINUX 将进程放入后台执行，SSH 断开导致进程结束 | ingrun</title>
   
 
 
@@ -192,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          LINUX 将进程放入后台执行，SSH 断开导致进程结束
         </h1>
 
         <div class="post-meta">
@@ -209,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-19 09:55:47" itemprop="dateModified" datetime="2021-10-19T09:55:47+08:00">2021-10-19</time>
+                <time title="修改时间：2021-10-19 10:00:20" itemprop="dateModified" datetime="2021-10-19T10:00:20+08:00">2021-10-19</time>
               </span>
 
           
@@ -223,7 +223,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="LINUX-将进程放入后台执行，SSH-断开导致进程结束"><a href="#LINUX-将进程放入后台执行，SSH-断开导致进程结束" class="headerlink" title="LINUX 将进程放入后台执行，SSH 断开导致进程结束"></a>LINUX 将进程放入后台执行，SSH 断开导致进程结束</h1><h2 id="（NOHUP-SETSID-amp-DISOWN）"><a href="#（NOHUP-SETSID-amp-DISOWN）" class="headerlink" title="（NOHUP, SETSID, &amp;, DISOWN）"></a>（NOHUP, SETSID, &amp;, DISOWN）</h2><p>Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown）</p>
+        <h2 id="（NOHUP-SETSID-amp-DISOWN）"><a href="#（NOHUP-SETSID-amp-DISOWN）" class="headerlink" title="（NOHUP, SETSID, &amp;, DISOWN）"></a>（NOHUP, SETSID, &amp;, DISOWN）</h2><p>Linux 将进程放入后台执行，解决网络，ssh断开导致进程结束（nohup,  setsid,  &amp;, disown）</p>
 <p>1、nohup 命令</p>
 <p>我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法就有两种途径：要么让进程忽略 HUP 信号，要么让进程运行在新的会话里从而成为不属于此终端的子进程</p>
 <p>nohup &amp; 命令并不能从根本上解决ssh断开问题。</p>
@@ -312,8 +312,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2021/08/16/sql%E4%BC%98%E5%8C%96/" rel="prev" title="">
-      <i class="fa fa-chevron-left"></i> 
+    <a href="/blog/2021/08/16/sql%E4%BC%98%E5%8C%96/" rel="prev" title="SQL 优化">
+      <i class="fa fa-chevron-left"></i> SQL 优化
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -374,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX-%E5%B0%86%E8%BF%9B%E7%A8%8B%E6%94%BE%E5%85%A5%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C%EF%BC%8CSSH-%E6%96%AD%E5%BC%80%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E7%BB%93%E6%9D%9F"><span class="nav-number">1.</span> <span class="nav-text">LINUX 将进程放入后台执行，SSH 断开导致进程结束</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88NOHUP-SETSID-amp-DISOWN%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">（NOHUP, SETSID, &amp;, DISOWN）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88NOHUP-SETSID-amp-DISOWN%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">（NOHUP, SETSID, &amp;, DISOWN）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
