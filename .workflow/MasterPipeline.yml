@@ -44,7 +44,7 @@ stages:
       - step: deploy@agent
         name: deploy_agent
         displayName: 主机部署
-        hostGroupID: gitee-go
+        hostGroupID: '1'
         deployArtifact:
           - source: artifact
             name: output
